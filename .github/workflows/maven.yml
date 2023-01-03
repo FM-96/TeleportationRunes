@@ -19,7 +19,7 @@ jobs:
     - name: Set prerelease env
       run: echo "IS_PRE_RELEASE=false" >> $GITHUB_ENV
     - name: Set prerelease env part 2
-      if: ${{ contains(env.RELEASE_VERSION, 'beta') }}
+      if: ${{ contains(env.RELEASE_VERSION, '-') }}
       run: echo "IS_PRE_RELEASE=true" >> $GITHUB_ENV
     - uses: actions/checkout@v2
     - name: Set up JDK 16
